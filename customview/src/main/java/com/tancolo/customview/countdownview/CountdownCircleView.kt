@@ -369,6 +369,10 @@ class CountdownCircleView @JvmOverloads constructor(
                 override fun onAnimationEnd(animation: Animator) {
                     super.onAnimationEnd(animation)
                     clearAnimation()
+
+                    if (DEBUG) {
+                        Log.d(TAG, "onAnimationEnd, mCallback = $mCallback, get() = ${mCallback?.get()}")
+                    }
                     mCallback?.get()?.complete()
                 }
             })
@@ -377,6 +381,9 @@ class CountdownCircleView @JvmOverloads constructor(
     }
 
     fun setCallback(cb: Callback?) {
+        if (DEBUG) {
+            Log.d(TAG, "setCallback, cb = $cb")
+        }
         mCallback = cb?.let { WeakReference<Callback>(cb) }
     }
 }

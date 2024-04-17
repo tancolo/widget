@@ -2,7 +2,10 @@ package com.tancolo.widget
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.Toast
+import com.tancolo.customview.countdownview.Callback
 import com.tancolo.customview.countdownview.CountdownCircleView
 
 class MainActivity : AppCompatActivity() {
@@ -53,8 +56,15 @@ class MainActivity : AppCompatActivity() {
         mCountdownCircleViewList.add(findViewById(R.id.view_clockwise_forward_5_001))
         mCountdownCircleViewList.add(findViewById(R.id.view_clockwise_forward_5_002))
         mCountdownCircleViewList.add(findViewById(R.id.view_clockwise_forward_5_003))
-        mCountdownCircleViewList.add(findViewById(R.id.view_clockwise_forward_5_004))
 
+        // set Callback
+        val circleView =  findViewById<CountdownCircleView>(R.id.view_clockwise_forward_5_004)
+        circleView.setCallback(object : Callback {
+            override fun complete() {
+                Toast.makeText(this@MainActivity, "The Animation finished", Toast.LENGTH_SHORT).show()
+            }
+        })
+        mCountdownCircleViewList.add(circleView)
     }
 
 }
