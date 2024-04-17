@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CountdownCircleView">
+        <!-- The radius of the circle view -->
+        <attr name="countdown_circle_radius" format="dimension" />
+
+        <!-- The width of the arc -->
+        <attr name="countdown_arc_width" format="dimension" />
+
+        <!--The color of the arc -->
+        <attr name="countdown_arc_color" format="color" />
+
+        <!-- The color of the background -->
+        <attr name="countdown_background_color" format="color" />
+
+        <!-- The color for the text -->
+        <attr name="countdown_text_color" format="color" />
+
+        <!-- The test size-->
+        <attr name="countdown_text_size" format="dimension" />
+
+        <!-- Showing animation time -->
+        <attr name="countdown_showing_time" format="integer" />
+
+        <!-- The time unit, default is S, short for seconds -->
+        <attr name="countdown_showing_time_unit" format="string" />
+
+        <!-- The draw types:
+            clockwise forward,
+            clockwise backward,
+            counterclockwise forward,
+            counterclockwise backward,
+        -->
+        <attr name="countdown_arch_draw_types" format="enum">
+            <!--  The outermost arc of the circle becomes longer in a clockwise direction,
+                  until the end of the arc
+            -->
+            <enum name="clockwise_forward" value="1" />
+
+            <!-- The outermost arc of the circle becomes shorter in a clockwise direction,
+                 until the arc disappears completely.
+            -->
+            <enum name="clockwise_backward" value="2" />
+
+            <!-- The outermost arc of the circle becomes longer in a counterclockwise direction,
+                 until the end of the arc
+            -->
+            <enum name="counterclockwise_forward" value="3" />
+
+            <!-- The outermost arc of the circle becomes shorter in a counterclockwise direction,
+                 until the arc disappears completely.
+            -->
+            <enum name="counterclockwise_backward" value="4" />
+
+        </attr>
+
+        <!-- The starting draw positions:left, top, right, bottom -->
+        <attr name="countdown_start_draw_positions" format="enum">
+            <!-- left, start drawing from -180 degree -->
+            <enum name="left" value="1" />
+
+            <!-- top, start drawing from -90 degree -->
+            <enum name="top" value="2" />
+
+            <!-- left, start drawing from 0 degree -->
+            <enum name="right" value="3" />
+
+            <!-- left, start drawing from 90 degree -->
+            <enum name="bottom" value="4" />
+        </attr>
+    </declare-styleable>
+
+</resources>

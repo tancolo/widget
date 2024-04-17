@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "widget"
 include(":app")
- 
+include(":customview")
