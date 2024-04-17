@@ -1,3 +1,6 @@
-<resources>
-    <string name="app_name">widget</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">widget</string>
+    <string name="start" translatable="false">Start</string>
+<!--    <string name="show_time_seconds" translatable="false">5</string>-->
+    <string name="show_time_unit" translatable="false">秒</string>
 </resources>
