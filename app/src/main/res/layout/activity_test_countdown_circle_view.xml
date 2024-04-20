@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestCountdownCircleView">
+
+    <Button
+        android:id="@+id/button_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_show">
+
+        <!--        linearlayout 1-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:countdown_arc_color="@color/design_default_color_primary"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@color/design_default_color_secondary"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="秒"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="15sp" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_backward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/design_default_color_primary"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_backward"
+                app:countdown_background_color="@color/design_default_color_secondary"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="S"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_counterclockwise_forward"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/design_default_color_primary"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="counterclockwise_forward"
+                app:countdown_background_color="@color/design_default_color_secondary"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_counterclockwise_backward"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/design_default_color_primary"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="counterclockwise_backward"
+                app:countdown_background_color="@color/design_default_color_secondary"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+        </LinearLayout>
+
+        <!--        linearlayout 2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_2_001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@color/grey"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="left"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_2_002"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@color/grey"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_2_003"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@color/grey"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="right"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_2_004"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@color/grey"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="bottom"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+        </LinearLayout>
+
+        <!--        linearlayout 3-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_backward_2_001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_backward"
+                app:countdown_background_color="@color/design_default_color_secondary_variant"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="left"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_backward_2_002"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_backward"
+                app:countdown_background_color="@color/design_default_color_secondary_variant"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_backward_2_003"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_backward"
+                app:countdown_background_color="@color/design_default_color_secondary_variant"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="right"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_backward_2_004"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="clockwise_backward"
+                app:countdown_background_color="@color/design_default_color_secondary_variant"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="bottom"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+        </LinearLayout>
+
+        <!--        linearlayout 4-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_counterclockwise_forward_4_001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="counterclockwise_forward"
+                app:countdown_background_color="@android:color/holo_orange_light"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="left"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_counterclockwise_forward_4_002"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="counterclockwise_forward"
+                app:countdown_background_color="@android:color/holo_orange_light"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_counterclockwise_forward_4_003"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="counterclockwise_forward"
+                app:countdown_background_color="@android:color/holo_orange_light"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="right"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_counterclockwise_forward_4_004"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@color/red"
+                app:countdown_arc_width="2dp"
+                app:countdown_arch_draw_types="counterclockwise_forward"
+                app:countdown_background_color="@android:color/holo_orange_light"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="5"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="bottom"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+        </LinearLayout>
+
+
+        <!--        linearlayout 5-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_5_001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:countdown_arc_color="@android:color/holo_green_dark"
+                app:countdown_arc_width="8dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@android:color/holo_blue_dark"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="10"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="left"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_5_002"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@android:color/holo_green_dark"
+                app:countdown_arc_width="8dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@android:color/holo_blue_dark"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="10"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="top"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_5_003"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@android:color/holo_green_dark"
+                app:countdown_arc_width="8dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@android:color/holo_blue_dark"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="10"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="right"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+
+            <com.tancolo.customview.countdownview.CountdownCircleView
+                android:id="@+id/view_clockwise_forward_5_004"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_marginStart"
+
+                app:countdown_arc_color="@android:color/holo_green_dark"
+                app:countdown_arc_width="8dp"
+                app:countdown_arch_draw_types="clockwise_forward"
+                app:countdown_background_color="@android:color/holo_blue_dark"
+                app:countdown_circle_radius="@dimen/circle_radius"
+                app:countdown_showing_time="10"
+                app:countdown_showing_time_unit="@string/show_time_unit"
+                app:countdown_start_draw_positions="bottom"
+                app:countdown_text_color="@color/red"
+                app:countdown_text_size="@dimen/show_time_text_size" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
