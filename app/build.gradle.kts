@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.api.VariantFilter
 import org.jetbrains.kotlin.ir.backend.js.compile
 
 plugins {
@@ -27,7 +28,73 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }
     }
+    buildFeatures {
+        buildConfig = true
+    }
+
+// IMPORTANT REFERENCE
+// https://medium.com/@dimasoktanugraha47/how-to-create-build-types-and-flavors-in-android-kotlin-bb4c41707279
+// https://developer.android.com/build/build-variants#kts
+
+    val additionalFlavor = listOf("env", "type")
+    flavorDimensions += additionalFlavor
+    productFlavors {
+        create("development") {
+            dimension = "env"
+        }
+        create("production") {
+            dimension = "env"
+        }
+        create("free") {
+            dimension = "type"
+            applicationIdSuffix = ".free"
+            versionNameSuffix = "_free"
+            buildConfigField("Boolean", "SHOW_ADS", "true")
+        }
+        create("pro") {
+            dimension = "type"
+            applicationId = "com.tancolo.widget4444"
+            buildConfigField("Boolean", "SHOW_ADS", "false")
+        }
+        //debug productFlavors
+        productFlavors.forEach {
+            println("===>" + it.toString())
+        }
+    }
+
+    androidComponents {
+        beforeVariants { variantBuilder ->
+            // To check for a certain build type, use variantBuilder.buildType == "<buildType>"
+            if (variantBuilder.productFlavors.containsAll(listOf("api" to "minApi21", "mode" to "demo"))) {
+                // Gradle ignores any variants that satisfy the conditions above.
+                variantBuilder.enable = false
+            }
+        }
+
+
+//    variantFilter { variant ->
+//        def names = variant.flavors*.name
+//        if (variant.buildType.name == "release") {
+//            if (!names.contains("production")) {
+//                setIgnore(true)
+//            }
+//        }
+//    }
+
+//    androidComponents {
+//        beforeVariants { variantBuilder ->
+//            // To check for a certain build type, use variantBuilder.buildType == "<buildType>"
+//            if (variantBuilder.productFlavors.containsAll(listOf("api" to "minApi21", "mode" to "demo"))) {
+//                // Gradle ignores any variants that satisfy the conditions above.
+//                variantBuilder.enable = false
+//            }
+//        }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
